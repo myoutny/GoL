@@ -12,9 +12,9 @@ import matplotlib.pyplot as plt
 from tick import tick
 import time
 
-t = np.arange(100)
+t = np.arange(10)
 g , sidx = initgame(1000)
-mode = 'Live'
+mode = 'Store'
 
 if mode == 'Store':
     G = propagate(g,t)

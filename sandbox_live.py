@@ -31,7 +31,27 @@ for t in range(360):
 #     plt.imshow(kin[:,:,0])
 #     plt.show()
 
-kin = kernel(np.array([[12,21]]), type='circle', order=5, space=24)
+
+space = 64
+h = np.zeros([space,space])
+v = np.indices(h.shape)
+v[0]
+c = [12,21]
+np.mod((v[0] - c[0]),64)
+h = ((v[0] - c[0])**2. + (v[1] - c[1])**2.) <= order**2.0
+
+
+
+
+
+
+
+
+
+
+
+
+kin = kernel(np.array([[12,12]]), type='circle', order=5, space=24)
 plt.imshow(kin[:,:,0])
 
 A = np.random.randint(0,10,[8,8])

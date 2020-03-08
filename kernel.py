@@ -8,7 +8,11 @@ def kernel(loc=np.zeros([1,2]), type='square', order=1, space=64):
         h = np.zeros([space,space])
         if type == 'circle':
             v = np.indices(h.shape)
-            h = ((v[0] - c[0])**2. + (v[1] - c[1])**2.) <= order**2.0
+            ia = (v[0] - c[0])
+            ib = (v[1] - c[1])
+            mia = np.mod(ia,space)
+            mib = np.mod(ib,space)
+            h = (mia**2. + mib**2.) <= order**2.0
             # for r in range(order):
             #     a=[]
             #     for t in range(360):
