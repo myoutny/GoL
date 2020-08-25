@@ -32,15 +32,19 @@ for t in range(360):
 #     plt.show()
 
 
-space = 64
+space = 24
+order = 5
 h = np.zeros([space,space])
 v = np.indices(h.shape)
-v[0]
 c = [12,21]
-np.mod((v[0] - c[0]),64)
-h = ((v[0] - c[0])**2. + (v[1] - c[1])**2.) <= order**2.0
-
-
+ia = (v[0] - c[0])
+ib = (v[1] - c[1])
+mia = np.mod(ia,space)
+mib = np.mod(ib,space)
+h = (ia**2. + ib**2.) <= order**2.0
+ia
+mia
+plt.imshow(h)
 
 
 
